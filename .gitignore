@@ -1,0 +1,40 @@
+# Package Files #
+*.war
+
+# Built application files
+*.apk
+*.ap_
+
+# Files for the Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+*.iml
+
+classes/
+build/
+out/
+#bin/
+
+.gradle/
+gradle/
+
+.idea/*
+.idea/
+
+.classpath
+.project
+.mymetadata
+.settings/
+.metadata/
+.DS_Store
+target/
+target/*
+logs
+logs/*
+tc-mobile-rest-web
+tc-mobile-rest-web/*
+
+.m2
