@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:javaee="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+    <display-name>Gupao Web Application</display-name>
+    <servlet>
+        <!--    添加servlet定义配置DispatcherServlet：前端处理器控制器，接受HTTP请求和转发请求的类，是分发Controller请求的，是Spring的核心要素。-->
+        <servlet-name>gpmvc</servlet-name>
+        <servlet-class>com.houcy7.framework.servlet.v2.GPDispatcherServlet</servlet-class>
+        <!--
+        指定Spring IOC容器需要读取的定义了非web层的Bean（DAO/Service）的XML文件路径。
+        可以指定多个XML文件路径，可以用逗号、冒号等来分隔。如果没有指定”contextConfigLocation”参数，则会在 /WEB-INF/下查找
+         此处为了方便使用了properties类型的文件
+         -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>application.properties</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!--  和上边的servlet中的servlet-name对应-->
+    <servlet-mapping>
+        <servlet-name>gpmvc</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+</web-app>
+
